@@ -16,7 +16,8 @@ Public Const SHEET_BAOCAO As String = "BAO CAO"
 ' Sheet TON KHO: MaViTri | MaSP | MaGo | DoDay | SoTam
 
 ' Vung thong tin o kho tren SO DO KHO
-Public Const INFO_COL As String = "AD"
+' Cau truc: AC = label, AE = gia tri
+Public Const INFO_COL As String = "AE"
 Public Const INFO_MAVITRI_ROW As Integer = 2
 Public Const INFO_TRANGTHAI_ROW As Integer = 3
 Public Const INFO_TONKHO_START_ROW As Integer = 8
