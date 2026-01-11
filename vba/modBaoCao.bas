@@ -134,3 +134,36 @@ Public Sub TaoBaoCaoChiTietSP(ByVal TuNgay As Date, ByVal DenNgay As Date)
 
     MsgBox "Da tao bao cao chi tiet!", vbInformation
 End Sub
+
+' ===== WRAPPER CHO NUT BAM =====
+Public Sub BtnBaoCaoTongHop()
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Sheets(SHEET_BAOCAO)
+    Dim tuNgay As Date
+    Dim denNgay As Date
+    On Error Resume Next
+    tuNgay = ws.Range("B3").Value
+    denNgay = ws.Range("D3").Value
+    On Error GoTo 0
+    If tuNgay = 0 Or denNgay = 0 Then
+        MsgBox "Vui long nhap Tu ngay (B3) va Den ngay (D3)!", vbExclamation
+        Exit Sub
+    End If
+    TaoBaoCaoTongHop tuNgay, denNgay
+End Sub
+
+Public Sub BtnBaoCaoChiTiet()
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Sheets(SHEET_BAOCAO)
+    Dim tuNgay As Date
+    Dim denNgay As Date
+    On Error Resume Next
+    tuNgay = ws.Range("B3").Value
+    denNgay = ws.Range("D3").Value
+    On Error GoTo 0
+    If tuNgay = 0 Or denNgay = 0 Then
+        MsgBox "Vui long nhap Tu ngay (B3) va Den ngay (D3)!", vbExclamation
+        Exit Sub
+    End If
+    TaoBaoCaoChiTietSP tuNgay, denNgay
+End Sub
