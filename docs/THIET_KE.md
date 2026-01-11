@@ -12,7 +12,7 @@ Hệ thống quản lý kho gỗ sử dụng Excel VBA, bao gồm 6 sheets chín
 |------|---------|-------|
 | Tên Sheet | VIẾT HOA, có cách | SO DO KHO, VI TRI, SAN PHAM |
 | Tên Cột (Header) | PascalCase, không dấu | MaViTri, TrangThai, SoTamQuyDoi |
-| Giá trị dữ liệu | Có dấu tiếng Việt | "Mở", "Đóng", "Nhập", "Xuất" |
+| Giá trị dữ liệu | Không dấu (tương thích VBA) | "Mo", "Dong", "Nhap", "Xuat", "Dung" |
 | Mã vị trí | K + số thứ tự | K1, K2, ... K104 |
 | Mã sản phẩm | TênGỗViếtTắt-ĐộDày | SoiTrangAA-17, CotTho-9 |
 
@@ -58,10 +58,10 @@ Hàng 6: K79 - K104 (cột A-Z)
 | Cột | Tên | Mô tả |
 |-----|-----|-------|
 | A | MaViTri | Mã vị trí (K1-K104) |
-| B | TrangThai | "Mở" hoặc "Đóng" |
+| B | TrangThai | "Mo" hoặc "Dong" |
 | C | GhiChu | Ghi chú tùy chọn |
 
-**Dữ liệu khởi tạo:** 104 dòng (K1 đến K104), mặc định TrangThai = "Mở"
+**Dữ liệu khởi tạo:** 104 dòng (K1 đến K104), mặc định TrangThai = "Mo"
 
 ---
 
@@ -72,7 +72,7 @@ Hàng 6: K79 - K104 (cột A-Z)
 | A | MaSP | Mã sản phẩm (VD: SoiTrangAA-17) |
 | B | MaGo | Tên loại gỗ (VD: Sồi trắng AA) |
 | C | DoDay | Độ dày (mm) |
-| D | TrangThai | "Dùng" hoặc "Ngừng" |
+| D | TrangThai | "Dung" hoặc "Ngung" |
 | E | GhiChu | Ghi chú tùy chọn |
 
 **Quy tắc đặt MaSP:** `[TênGỗViếtTắt]-[ĐộDày]`
@@ -87,7 +87,7 @@ Hàng 6: K79 - K104 (cột A-Z)
 |-----|-----|-------|
 | A | Ngay | Ngày giao dịch (dd/mm/yyyy) |
 | B | Gio | Giờ giao dịch (hh:mm:ss) |
-| C | Loai | "Nhập" hoặc "Xuất" |
+| C | Loai | "Nhap" hoặc "Xuat" |
 | D | MaViTri | Mã vị trí (K1-K104) |
 | E | MaSP | Mã sản phẩm |
 | F | SoTam | Số tấm thực tế |
@@ -98,8 +98,8 @@ Hàng 6: K79 - K104 (cột A-Z)
 
 **Công thức SoTamQuyDoi:**
 ```
-Nếu Loai = "Nhập" thì SoTamQuyDoi = SoTam (số dương)
-Nếu Loai = "Xuất" thì SoTamQuyDoi = -SoTam (số âm)
+Nếu Loai = "Nhap" thì SoTamQuyDoi = SoTam (số dương)
+Nếu Loai = "Xuat" thì SoTamQuyDoi = -SoTam (số âm)
 ```
 > Giúp tính tồn kho dễ dàng bằng SUM(SoTamQuyDoi)
 

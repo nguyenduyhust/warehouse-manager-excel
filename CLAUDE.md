@@ -13,10 +13,16 @@ warehouse-manager-excel/
 ├── QuanLyKho.xlsm          # File Excel chính (có VBA)
 ├── README.md               # Giới thiệu dự án
 ├── CLAUDE.md               # File này
-└── docs/
-    ├── THIET_KE.md         # Thiết kế chi tiết
-    ├── VBA_CODE.md         # Code VBA đầy đủ
-    └── HUONG_DAN_SU_DUNG.md # Hướng dẫn người dùng
+├── docs/
+│   ├── THIET_KE.md         # Thiết kế chi tiết
+│   └── HUONG_DAN_SU_DUNG.md # Hướng dẫn người dùng
+└── vba/                    # Code VBA tách riêng từng module
+    ├── README.md           # Hướng dẫn import
+    ├── modMain.bas         # Module chính
+    ├── modBaoCao.bas       # Module báo cáo
+    ├── Sheet_SODOKHO.cls   # Code cho sheet SO DO KHO
+    ├── ThisWorkbook.cls    # Code cho ThisWorkbook
+    └── frmNhapXuat.frm     # UserForm nhập/xuất
 ```
 
 ## Cấu Trúc Excel (6 Sheets)
@@ -40,7 +46,10 @@ warehouse-manager-excel/
 
 - **Tên Sheet**: VIẾT HOA, có cách (SO DO KHO, VI TRI)
 - **Tên Cột (Header)**: PascalCase, không dấu (MaViTri, TrangThai, SoTam)
-- **Giá trị dữ liệu**: Có dấu tiếng Việt ("Mở", "Đóng", "Nhập", "Xuất")
+- **Giá trị dữ liệu**: Không dấu tiếng Việt để tương thích VBA
+  - Trạng thái vị trí: `"Mo"`, `"Dong"`
+  - Loại phát sinh: `"Nhap"`, `"Xuat"`
+  - Trạng thái sản phẩm: `"Dung"`, `"Ngung"`
 
 ## VBA Modules
 

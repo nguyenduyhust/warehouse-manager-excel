@@ -64,7 +64,7 @@
 
 ### Sheet VI TRI
 - Danh sách 104 vị trí K1-K104
-- Cột **TrangThai**: "Mở" hoặc "Đóng"
+- Cột **TrangThai**: "Mo" hoặc "Dong" (không dấu)
 - Có thể sửa trực tiếp hoặc dùng nút trên SO DO KHO
 
 ### Sheet SAN PHAM
@@ -72,7 +72,7 @@
 - **MaSP**: Mã duy nhất (VD: SoiTrangAA-17)
 - **MaGo**: Tên loại gỗ
 - **DoDay**: Độ dày (mm)
-- **TrangThai**: "Dùng" hoặc "Ngừng"
+- **TrangThai**: "Dung" hoặc "Ngung" (không dấu)
 
 ### Sheet PHAT SINH
 - Lịch sử tự động ghi khi nhập/xuất

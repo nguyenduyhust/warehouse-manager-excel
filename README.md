@@ -22,17 +22,17 @@ Hệ thống quản lý kho gỗ sử dụng Excel VBA, theo dõi 104 ô kho ch�
 
 ## Hướng Dẫn Cài Đặt
 
-1. Mở file `QuanLyKho.xlsm`
-2. Enable Macros khi được hỏi
-3. Nhấn `Alt + F11` để mở VBA Editor
-4. Import code từ `docs/VBA_CODE.md`
+1. Mở file `QuanLyKho.xlsx`, lưu lại thành `QuanLyKho.xlsm`
+2. Nhấn `Alt + F11` để mở VBA Editor
+3. Import code từ thư mục `vba/` (xem [hướng dẫn](vba/README.md))
+4. Enable Macros khi mở lại file
 
 Chi tiết xem tại: [Hướng dẫn sử dụng](docs/HUONG_DAN_SU_DUNG.md)
 
 ## Tài Liệu
 
 - [Thiết kế chi tiết](docs/THIET_KE.md) - Cấu trúc dữ liệu, logic nghiệp vụ
-- [Code VBA](docs/VBA_CODE.md) - Toàn bộ code với hướng dẫn
+- [Code VBA](vba/) - Các module VBA tách riêng
 - [Hướng dẫn sử dụng](docs/HUONG_DAN_SU_DUNG.md) - Dành cho người dùng cuối
 
 ## Yêu Cầu
