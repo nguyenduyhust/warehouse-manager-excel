@@ -25,6 +25,14 @@ Public Const INFO_TONKHO_START_ROW As Integer = 8
 Public CurrentMaViTri As String
 
 ' ===== MAPPING O KHO =====
+' Cau truc thuc te trong Excel:
+' - Cot A: "VAN PHONG" (row 2)
+' - K1-K26: Row 2, Cot B-AA (column 2-27)
+' - K27-K52: Row 3, Cot B-AA (column 2-27)
+' - Row 4: Mui ten
+' - K53-K78: Row 5, Cot B-AA (column 2-27)
+' - K79-K104: Row 6, Cot B-AA (column 2-27)
+
 ' Tra ve dia chi cell cua MaViTri tren sheet SODOKHO
 Public Function GetCellAddress(ByVal MaViTri As String) As String
     Dim num As Integer
@@ -36,16 +44,16 @@ Public Function GetCellAddress(ByVal MaViTri As String) As String
     Select Case num
         Case 1 To 26
             rowNum = 2
-            colNum = num
+            colNum = num + 1  ' K1 o cot B (column 2)
         Case 27 To 52
             rowNum = 3
-            colNum = num - 26
+            colNum = (num - 26) + 1
         Case 53 To 78
             rowNum = 5
-            colNum = num - 52
+            colNum = (num - 52) + 1
         Case 79 To 104
             rowNum = 6
-            colNum = num - 78
+            colNum = (num - 78) + 1
     End Select
 
     GetCellAddress = Cells(rowNum, colNum).Address(False, False)
@@ -55,15 +63,16 @@ End Function
 Public Function GetMaViTriFromCell(ByVal cellRow As Integer, ByVal cellCol As Integer) As String
     Dim num As Integer
 
+    ' Cot B-AA la column 2-27
     Select Case cellRow
         Case 2
-            If cellCol >= 1 And cellCol <= 26 Then num = cellCol
+            If cellCol >= 2 And cellCol <= 27 Then num = cellCol - 1
         Case 3
-            If cellCol >= 1 And cellCol <= 26 Then num = cellCol + 26
+            If cellCol >= 2 And cellCol <= 27 Then num = (cellCol - 1) + 26
         Case 5
-            If cellCol >= 1 And cellCol <= 26 Then num = cellCol + 52
+            If cellCol >= 2 And cellCol <= 27 Then num = (cellCol - 1) + 52
         Case 6
-            If cellCol >= 1 And cellCol <= 26 Then num = cellCol + 78
+            If cellCol >= 2 And cellCol <= 27 Then num = (cellCol - 1) + 78
         Case Else
             GetMaViTriFromCell = ""
             Exit Function
